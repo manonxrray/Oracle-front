@@ -3,7 +3,11 @@ export default function CardsGallery({ cards }) {
     <div>
       {cards.map((card) => (
         <div>
-          <h1>{card.name}</h1>
+          <div className="illustration">
+            <img src="/card.PNG" />
+          </div>
+          <h2>{card.name}</h2>
+          <p>{card.description}</p>
         </div>
       ))}
     </div>
