@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { DARKPURPLE } from "../../utils/styling";
+import Link from "next/link";
 
 const HeaderStyle = styled.header`
   background: ${DARKPURPLE};
@@ -8,11 +9,15 @@ const HeaderStyle = styled.header`
 export default function Header() {
   return (
     <HeaderStyle>
-      <ul>
-        <li>Accueil</li>
-        <li>Tirage</li>
-        <li>Galerie</li>
-      </ul>
+      <Link href="/">
+        <a>Accueil</a>
+      </Link>
+      <Link href="/tirage">
+        <a>Tirage</a>
+      </Link>
+      <Link href="/galerie">
+        <a>Galerie</a>
+      </Link>
     </HeaderStyle>
   );
 }
