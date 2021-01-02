@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import Header from "./Header";
 import Footer from "./Footer";
-import { MAUVE, WHITE, CORMORANT } from "../../utils/styling";
+import { MAUVE, DARKPURPLE, WHITE, CORMORANT } from "../../utils/styling";
 
 const PageStyle = styled.div`
-  background: ${MAUVE};
+  background: ${DARKPURPLE};
   color: ${WHITE};
   font-family: ${CORMORANT};
+  min-height: 100vh;
 `;
 
 export default function Paging({ children }) {

@@ -1,9 +1,4 @@
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond&family=Lobster&family=Raleway&family=Work+Sans:wght@300&family=Zilla+Slab&display=swap');
-</style>;
-
-// Font-families
+// Font-families are to upload in my app folder
 
 export const CORMORANT = "'Cormorant Garamond', Arial, serif";
 export const ABRIL = "'Abril Fatface', Georgia, cursive";

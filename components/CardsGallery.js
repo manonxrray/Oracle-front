@@ -13,6 +13,10 @@ const CardStyle = styled.div`
   }
 `;
 
+const CardNav = styled.div`
+  background: red;
+`;
+
 export default function CardsGallery({ cards }) {
   return (
     <div>

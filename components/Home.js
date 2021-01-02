@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { MAUVE } from "../utils/styling";
+import { DARKPURPLE } from "../utils/styling";
 
 const HomeStyle = styled.div`
-  background: ${MAUVE};
+  background: ${DARKPURPLE};
 `;
 
 export default function HomePage() {
