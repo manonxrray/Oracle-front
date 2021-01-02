@@ -26,7 +26,6 @@ export default function CardsGallery({ cards }) {
             <img src="/card.PNG" />
           </div>
           <h2>{card.name}</h2>
-          <p>{card.description}</p>
         </CardStyle>
       ))}
     </div>

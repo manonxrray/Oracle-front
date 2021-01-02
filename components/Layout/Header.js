@@ -3,6 +3,8 @@ import { MAUVE, WHITE } from "../../utils/styling";
 import Link from "next/link";
 
 const HeaderStyle = styled.header`
+  position: fixed;
+  width: 100vw;
   background: ${MAUVE};
   height: 2.5rem;
   display: flex;
@@ -10,9 +12,9 @@ const HeaderStyle = styled.header`
 
   > .logo {
     width: 1.5rem;
-    height: 1.5rem;
     border-radius: 50%;
-    background: ${WHITE};
+    background-image: url("/eye.PNG");
+    background-size: cover;
     margin: 0.5rem;
   }
 

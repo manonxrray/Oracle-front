@@ -1,5 +1,5 @@
-import CardsGallery from "../components/CardsGallery";
-import { getAllCards } from "../data/cardsFetcher";
+import CardsGallery from "../../components/CardsGallery";
+import { getAllCards } from "../../data/cardsFetcher";
 
 const fetcher = () => getAllCards();
 
