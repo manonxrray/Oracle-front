@@ -40,7 +40,7 @@ export default function Header() {
         <Link href="/tirage">
           <a>Tirage</a>
         </Link>
-        <Link href="/galerie">
+        <Link href="/galerie/reve">
           <a>Galerie</a>
         </Link>
       </nav>
