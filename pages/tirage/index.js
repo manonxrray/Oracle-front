@@ -1,7 +1,16 @@
-export default function Sort() {
-  return (
-    <div>
-      <h1>Tirez trois cartes !</h1>
-    </div>
-  );
+import Sort from "../../components/Sort";
+import { getAllCards } from "../../data/cardsFetcher";
+
+export async function getStaticProps() {
+  const cards = await getAllCards();
+
+  return {
+    props: {
+      cards,
+    },
+  };
+}
+
+export default function Choose({ cards }) {
+  return <Sort cards={cards} />;
 }

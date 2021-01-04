@@ -10,6 +10,10 @@ const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
 
+  @media (min-width: 1000px) {
+    height: 3.5rem;
+  }
+
   > .logo {
     width: 1.5rem;
     border-radius: 50%;
@@ -25,6 +29,19 @@ const HeaderStyle = styled.header`
 
     > a {
       margin: 0.5rem;
+
+      @media (min-width: 600px) {
+        font-size: 1.2rem;
+      }
+
+      @media (min-width: 1000px) {
+        font-size: 2rem;
+      }
+    }
+
+    > .active {
+      font-weight: bold;
+      font-size: 1.3rem;
     }
   }
 `;

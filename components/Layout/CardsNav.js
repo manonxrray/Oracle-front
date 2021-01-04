@@ -15,6 +15,11 @@ export const CardsNav = styled.div`
       margin: 0.5rem 0;
       padding: 0.5rem;
       text-align: center;
+      font-size: 0.7rem;
+
+      @media (min-width: 600px) {
+        font-size: 1rem;
+      }
 
       > img {
         width: 10rem;
