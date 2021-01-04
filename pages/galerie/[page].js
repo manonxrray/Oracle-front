@@ -48,19 +48,24 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function AllCards({ cards, card }) {
+export default function AllCards({ cards, card, page }) {
   return (
     <Gallery>
       <CardsNav>
         {cards.map((card) => (
-          <Link href={`/galerie/${card.slug}`}>
-            <a>
-              <img src={card.picture} />
-            </a>
-          </Link>
+          <div className={page === card.slug ? "active" : ""}>
+            <Link href={`/galerie/${card.slug}`}>
+              <a>
+                <img src={card.picture} />
+                <h2>
+                  {card.number}.{card.name}
+                </h2>
+              </a>
+            </Link>
+          </div>
         ))}
       </CardsNav>
-      {/* <Card {...card} /> */}
+      <Card {...card} />
     </Gallery>
   );
 }
