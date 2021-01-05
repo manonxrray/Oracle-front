@@ -17,11 +17,11 @@ const Container = styled.div`
 
   > img {
     margin: 0 auto;
-    width: 20rem;
+    width: 10rem;
 
     @media (min-width: 600px) {
-      width: 25rem;
-      height: 25rem;
+      width: 15rem;
+
       margin: 0;
     }
   }

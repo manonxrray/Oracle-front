@@ -11,9 +11,10 @@ export const CardsNav = styled.div`
   }
 
   > div {
+    padding: 0.5rem;
+
     > a {
       margin: 0.5rem 0;
-      padding: 0.5rem;
       text-align: center;
       font-size: 0.7rem;
 
@@ -22,7 +23,11 @@ export const CardsNav = styled.div`
       }
 
       > img {
-        width: 10rem;
+        width: 5rem;
+
+        @media (min-width: 800px) {
+          width: 8rem;
+        }
       }
     }
   }
