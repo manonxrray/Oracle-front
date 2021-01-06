@@ -49,7 +49,7 @@ const HeaderStyle = styled.header`
 export default function Header() {
   return (
     <HeaderStyle>
-      <div className="logo" />
+      <img className="logo" src="/logo.PNG" />
       <nav>
         <Link href="/">
           <a>Accueil</a>

@@ -11,7 +11,9 @@ const HomeStyle = styled.div`
       font-size: 1.5rem;
     }
     > img {
-      width: 20rem;
+      display: block;
+      width: 15rem;
+      margin: auto;
     }
   }
 `;
@@ -22,7 +24,7 @@ export default function HomePage() {
       <HomeStyle>
         <div>
           <h1>Bienvenue, installez- vous !</h1>
-          <img src="/eye.PNG" />
+          <img src="/backopen.PNG" />
         </div>
       </HomeStyle>
     </main>

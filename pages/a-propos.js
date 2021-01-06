@@ -1,7 +1,5 @@
-export default function About() {
-  return (
-    <div>
-      <h1>A propos de oim</h1>
-    </div>
-  );
+import About from "../components/FooterComponents/About";
+
+export default function AboutEyes() {
+  return <About />;
 }

@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { LIGHTPINK } from "../utils/styling";
+import { Link } from "next/link";
+import { useState, componentDidUpdate } from "react";
 
 const CardsContainer = styled.div`
   display: flex;
@@ -28,19 +30,19 @@ function shuffle(array) {
 }
 
 export default function Sort({ cards }) {
+  // My cards are shuffled
   let mixedCards = shuffle(cards);
 
-  // The next function will store the 3 selected cards in an array
-  // and make sure the user can see which card they clicked on
+  // Setting an empty array, fill it with the clicked cards
 
-  let selectedCards = [];
+  let selection = [];
 
   const select = (prop) => {
-    // this next condition make sure the user can't pick more than 3 cards and not the same twice
-    if (selectedCards.length < 3 && !selectedCards.includes(prop)) {
-      selectedCards.push(prop);
+    if (selection.length < 3 && !selection.includes(prop)) {
+      selection.push(prop);
     }
-    console.log(selectedCards);
+
+    console.log(selection);
   };
 
   return (
@@ -51,7 +53,7 @@ export default function Sort({ cards }) {
           <div onClick={() => select(card.slug)}>
             <img
               src={
-                selectedCards.includes(card.slug)
+                selection.includes(card.slug)
                   ? "/backopen.PNG"
                   : "/backclosed.PNG"
               }
@@ -59,6 +61,11 @@ export default function Sort({ cards }) {
           </div>
         ))}
       </CardsContainer>
+      {selection.length === 3 && (
+        <Link href="/tirage/resultat">
+          <a>Voir les résultats de votre tirage</a>
+        </Link>
+      )}
     </>
   );
 }

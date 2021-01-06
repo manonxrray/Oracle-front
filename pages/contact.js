@@ -1,7 +1,5 @@
-export default function Contact() {
-  return (
-    <div>
-      <h1>Contactez-mooooiiiiiiii loliloool</h1>
-    </div>
-  );
+import Contact from "../components/FooterComponents/Contact";
+
+export default function ContactMe() {
+  return <Contact />;
 }
