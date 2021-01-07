@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { LIGHTPINK } from "../utils/styling";
-import { Link } from "next/link";
-import { useState, componentDidUpdate } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 const CardsContainer = styled.div`
   display: flex;
@@ -30,6 +30,8 @@ function shuffle(array) {
 }
 
 export default function Sort({ cards }) {
+  const [selectedCards, setSelectedCards] = useState([]);
+
   // My cards are shuffled
   let mixedCards = shuffle(cards);
 
@@ -41,19 +43,23 @@ export default function Sort({ cards }) {
     if (selection.length < 3 && !selection.includes(prop)) {
       selection.push(prop);
     }
-
-    console.log(selection);
+    if (selection.length === 3) {
+      setSelectedCards([...selection]);
+      console.log("modified", selectedCards);
+    }
   };
+
+  console.log("state", selectedCards);
 
   return (
     <>
       <h1>Vous pouvez tirer 3 cartes</h1>
       <CardsContainer>
         {mixedCards.map((card) => (
-          <div onClick={() => select(card.slug)}>
+          <div key={card._id} onClick={() => select(card)}>
             <img
               src={
-                selection.includes(card.slug)
+                selectedCards.includes(card)
                   ? "/backopen.PNG"
                   : "/backclosed.PNG"
               }
@@ -61,8 +67,8 @@ export default function Sort({ cards }) {
           </div>
         ))}
       </CardsContainer>
-      {selection.length === 3 && (
-        <Link href="/tirage/resultat">
+      {selectedCards.length === 3 && (
+        <Link href={`/tirage/resultat?selectedCards=${selectedCards}`}>
           <a>Voir les résultats de votre tirage</a>
         </Link>
       )}

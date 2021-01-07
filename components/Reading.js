@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { MAUVE } from "../utils/styling";
+import { useRouter } from "next/router";
 
 const titles = ["passé", "présent", "futur"];
 
@@ -26,7 +27,7 @@ const SlotStyle = styled.div`
   }
 `;
 
-function Slot({ title }) {
+function Slot({ title, past, present, future }) {
   return (
     <SlotStyle>
       <div className="image">
@@ -34,18 +35,31 @@ function Slot({ title }) {
         <h2>{title}</h2>
       </div>
       <div className="content">
-        <h3>Nom de la carte</h3>
-        <p>Description de la carte</p>
+        {/* {title === "passé" && <h3>{past}</h3>}
+        {title === "présent" && <h3>{present}</h3>}
+        {title === "futur" && <h3>{future}</h3>} */}
+        <p>Description</p>
       </div>
     </SlotStyle>
   );
 }
 
 export default function Reading() {
+  let router = useRouter();
+
+  let selectedCards = router?.query?.selectedCards;
+  console.log(selectedCards);
+
   return (
     <ReadStyle>
-      {titles.map((title) => (
-        <Slot title={title} />
+      {titles.map((title, i) => (
+        <Slot
+          key={titles[i]}
+          title={title}
+          // past={pastCard}
+          // present={presentCard}
+          // future={futureCard}
+        />
       ))}
       <Link href="/">Retour à la page d'accueil</Link>
     </ReadStyle>
