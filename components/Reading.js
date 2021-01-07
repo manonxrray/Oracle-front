@@ -31,7 +31,7 @@ function Slot({ title, past, present, future }) {
   return (
     <SlotStyle>
       <div className="image">
-        <img src="/eye.PNG" />
+        {/* <img src="/eye.PNG" /> */}
         <h2>{title}</h2>
       </div>
       <div className="content">
