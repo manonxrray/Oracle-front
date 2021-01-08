@@ -17,7 +17,6 @@ const HeaderStyle = styled.header`
   > .logo {
     width: 1.5rem;
     border-radius: 50%;
-    background-image: url("/eye.PNG");
     background-size: cover;
     margin: 0.5rem;
   }
