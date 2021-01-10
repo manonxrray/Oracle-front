@@ -51,8 +51,8 @@ export default function AllCards({ cards, card, page }) {
     <Gallery>
       <CardsNav>
         {cards.map((card) => (
-          <div className={page === card.slug ? "active" : ""}>
-            <Link key={card._id} href={`/galerie/${card.slug}`}>
+          <div key={card._id} className={page === card.slug ? "active" : ""}>
+            <Link href={`/galerie/${card.slug}`}>
               <a>
                 <h2>
                   {card.number}. {card.name}

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { SOFTBLUE, WHITE } from "../../utils/styling";
+import { MAUVE, WHITE } from "../../utils/styling";
 import Link from "next/link";
 
 const FooterStyle = styled.header`
-  background: ${SOFTBLUE};
+  background: ${MAUVE};
   height: 2.5rem;
   color: ${WHITE};
   display: flex;

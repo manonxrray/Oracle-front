@@ -32,13 +32,13 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      card1,
-      card2,
-      card3,
+      pastCard: card1[0],
+      presentCard: card2[0],
+      futureCard: card3[0],
     },
   };
 }
 
-export default function Result({ card1, card2, card3 }) {
-  return <Reading past={card1} present={card2} future={card3} />;
+export default function Result({ pastCard, presentCard, futureCard }) {
+  return <Reading past={pastCard} present={presentCard} future={futureCard} />;
 }

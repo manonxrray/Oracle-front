@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { DEEPPINK, WHITE, DEEPMAUVE } from "../utils/styling";
-import { useRouter } from "next/router";
+import { DEEPPINK, DEEPMAUVE } from "../utils/styling";
 
 const titles = ["passé", "présent", "futur"];
 
@@ -119,9 +118,9 @@ export default function Reading({ past, present, future }) {
         <Slot
           key={titles[i]}
           title={title}
-          past={past[0]}
-          present={present[0]}
-          future={future[0]}
+          past={past}
+          present={present}
+          future={future}
         />
       ))}
       <Link href="/">Retour à la page d'accueil</Link>
