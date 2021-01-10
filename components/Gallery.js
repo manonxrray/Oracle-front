@@ -1,3 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Gallery = styled.div``;
+export const Gallery = styled.div`
+  display: flex;
+`;

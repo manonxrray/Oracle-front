@@ -1,28 +1,27 @@
 import styled from "@emotion/styled";
-import { MAUVE, WHITE } from "../../utils/styling";
+import { WHITE } from "../../utils/styling";
 import Link from "next/link";
 
 const HeaderStyle = styled.header`
   position: fixed;
   width: 100vw;
-  background: ${MAUVE};
   height: 2.5rem;
   display: flex;
   justify-content: space-between;
+  background: ${WHITE};
 
   @media (min-width: 1000px) {
     height: 3.5rem;
   }
 
   > .logo {
-    width: 1.5rem;
-    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
     background-size: cover;
-    margin: 0.5rem;
+    margin: 0 0.5rem;
   }
 
   > nav {
-    color: ${WHITE};
     font-style: italic;
     margin: 0.5rem;
 

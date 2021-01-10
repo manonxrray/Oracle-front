@@ -1,8 +1,8 @@
 import { getAllCards } from "../../data/cardsFetcher";
 import Card from "../../components/Card";
-import { CardsNav } from "../../components/Layout/CardsNav";
-import { Gallery } from "../../components/Gallery";
+import { CardsNav } from "../../components/CardsNav";
 import Link from "next/link";
+import { Gallery } from "../../components/Gallery";
 
 /* 
   I want my gallery to show each card (and its description) when the user 
@@ -54,11 +54,10 @@ export default function AllCards({ cards, card, page }) {
       <CardsNav>
         {cards.map((card) => (
           <div className={page === card.slug ? "active" : ""}>
-            <Link href={`/galerie/${card.slug}`}>
+            <Link key={card._id} href={`/galerie/${card.slug}`}>
               <a>
-                <img src={card.picture} />
                 <h2>
-                  {card.number}.{card.name}
+                  {card.number}. {card.name}
                 </h2>
               </a>
             </Link>

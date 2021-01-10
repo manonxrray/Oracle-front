@@ -25,7 +25,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   let { path } = params;
   let [s1, s2, s3] = path.split("-");
-  console.log(s1, s2, s3);
 
   const card1 = await getCardBySlug(s1);
   const card2 = await getCardBySlug(s2);

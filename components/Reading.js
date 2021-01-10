@@ -11,15 +11,29 @@ const ReadStyle = styled.div`
 `;
 
 const SlotStyle = styled.div`
+  @keyframes floating {
+    0% {
+      padding-top: 1rem;
+    }
+    50% {
+      padding-top: 0rem;
+    }
+    100% {
+      padding-top: 1rem;
+    }
+  }
+
   color: ${MAUVE};
   display: flex;
-  margin: 1rem 0;
+  margin: 1rem;
 
   > .image {
     display: grid;
     place-items: center;
     > img {
-      width: 12rem;
+      width: 9rem;
+      border-radius: 8px;
+      // animation: 2s floating infinite;
     }
     > h2 {
       text-transform: uppercase;
@@ -70,7 +84,6 @@ function Slot({ title, past, present, future }) {
 }
 
 export default function Reading({ past, present, future }) {
-  console.log("READING cards", past, present, future);
   return (
     <ReadStyle>
       {titles.map((title, i) => (

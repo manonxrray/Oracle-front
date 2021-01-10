@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { DARKPURPLE } from "../utils/styling";
 
 const HomeStyle = styled.div`
-  background: ${DARKPURPLE};
   margin-top: 1rem;
 
   > div {

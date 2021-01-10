@@ -8,6 +8,11 @@ function Oracle({ Component, pageProps }) {
       <Head>
         <title>L'oracle des yeux</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Paging>

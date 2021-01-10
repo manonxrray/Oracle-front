@@ -1,22 +1,23 @@
 import styled from "@emotion/styled";
-import { LIGHTPINK, BLUEPURPLE } from "../../utils/styling";
+import { MAUVE, WHITE } from "../utils/styling";
 
 export const CardsNav = styled.div`
-  display: flex;
-  overflow: scroll;
-
   > .active {
-    background: ${LIGHTPINK};
-    color: ${BLUEPURPLE};
+    background: ${WHITE};
+    color: black;
   }
 
+  width: 30vw;
+
   > div {
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: ${MAUVE};
+    color: ${WHITE};
 
     > a {
       margin: 0.5rem 0;
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.5rem;
 
       @media (min-width: 600px) {
         font-size: 1rem;

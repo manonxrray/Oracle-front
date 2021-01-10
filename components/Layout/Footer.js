@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { BLUEPURPLE, LIGHTPINK } from "../../utils/styling";
+import { SOFTBLUE, WHITE } from "../../utils/styling";
 import Link from "next/link";
 
 const FooterStyle = styled.header`
-  background: ${BLUEPURPLE};
+  background: ${SOFTBLUE};
   height: 2.5rem;
-  color: ${LIGHTPINK};
+  color: ${WHITE};
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
