@@ -29,13 +29,29 @@ const SlotStyle = styled.div`
 
 function Slot({ title, past, present, future }) {
   const IMAGE =
-    title === "passé" ? past[3] : title === "présent" ? present[3] : future[3];
+    title === "passé"
+      ? past.picture
+      : title === "présent"
+      ? present.picture
+      : future.picture;
   const NAME =
-    title === "passé" ? past[0] : title === "présent" ? present[0] : future[0];
+    title === "passé"
+      ? past.name
+      : title === "présent"
+      ? present.name
+      : future.name;
   const NUMBER =
-    title === "passé" ? past[1] : title === "présent" ? present[1] : future[1];
+    title === "passé"
+      ? past.number
+      : title === "présent"
+      ? present.number
+      : future.number;
   const DESCRIPTION =
-    title === "passé" ? past[2] : title === "présent" ? present[2] : future[2];
+    title === "passé"
+      ? past.past
+      : title === "présent"
+      ? present.present
+      : future.future;
 
   return (
     <SlotStyle>
@@ -53,53 +69,17 @@ function Slot({ title, past, present, future }) {
   );
 }
 
-export default function Reading() {
-  let router = useRouter();
-
-  function noQuotes(string) {
-    let newString = string.split(`"`);
-    return newString;
-  }
-
-  let splitPast = router?.query?.pastPic.split(`""`);
-  let pastPic = splitPast.toString();
-
-  let splitPresent = router?.query?.presentPic.split(`""`);
-  let presentPic = splitPresent.toString();
-
-  let splitFuture = router?.query?.futurePic.split(`""`);
-  let futurePic = splitFuture.toString();
-
-  let pastCard = [
-    noQuotes(router?.query?.pastName),
-    noQuotes(router?.query?.pastNumber),
-    noQuotes(router?.query?.pastTxt),
-    pastPic.replace(/['"]+/g, ""),
-  ];
-
-  let presentCard = [
-    noQuotes(router?.query?.presentName),
-    noQuotes(router?.query?.presentNumber),
-    noQuotes(router?.query?.presentTxt),
-    presentPic.replace(/['"]+/g, ""),
-  ];
-
-  let futureCard = [
-    noQuotes(router?.query?.futureName),
-    noQuotes(router?.query?.futureNumber),
-    noQuotes(router?.query?.futureTxt),
-    futurePic.replace(/['"]+/g, ""),
-  ];
-
+export default function Reading({ past, present, future }) {
+  console.log("READING cards", past, present, future);
   return (
     <ReadStyle>
       {titles.map((title, i) => (
         <Slot
           key={titles[i]}
           title={title}
-          past={pastCard}
-          present={presentCard}
-          future={futureCard}
+          past={past[0]}
+          present={present[0]}
+          future={future[0]}
         />
       ))}
       <Link href="/">Retour à la page d'accueil</Link>
