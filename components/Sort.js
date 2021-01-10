@@ -98,7 +98,7 @@ export default function Sort({ cards }) {
         <Link
           href={`/tirage/resultat/${selectedCards[0].slug}-${selectedCards[1].slug}-${selectedCards[2].slug}`}
         >
-          <a>Lire l'interpréation de votre tirage</a>
+          <a>Lire l'interprétation de votre tirage</a>
         </Link>
       )}
     </Sorting>

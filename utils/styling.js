@@ -7,3 +7,4 @@ export const MAUVE = "#B59BE8";
 export const DEEPMAUVE = "#7961EB";
 export const SOFTBLUE = "#AFABFF";
 export const LIGHTGREY = "#BDB5B7";
+export const DEEPPINK = "#DA80FF";

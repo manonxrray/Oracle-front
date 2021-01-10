@@ -37,8 +37,6 @@ export async function getStaticProps({ params }) {
   let { page } = params;
   const cards = await getAllCards();
 
-  console.log(params, cards);
-
   return {
     props: {
       page,

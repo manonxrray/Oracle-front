@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { MAUVE } from "../utils/styling";
+import { DEEPPINK, WHITE, DEEPMAUVE } from "../utils/styling";
 import { useRouter } from "next/router";
 
 const titles = ["passé", "présent", "futur"];
@@ -8,6 +8,13 @@ const titles = ["passé", "présent", "futur"];
 const ReadStyle = styled.div`
   display: flex;
   flex-direction: column;
+
+  > a {
+    display: block;
+    margin: 1rem auto;
+    color: ${DEEPPINK};
+    text-decoration: underline;
+  }
 `;
 
 const SlotStyle = styled.div`
@@ -23,20 +30,40 @@ const SlotStyle = styled.div`
     }
   }
 
-  color: ${MAUVE};
+  color: ${DEEPMAUVE};
   display: flex;
   margin: 1rem;
 
-  > .image {
-    display: grid;
-    place-items: center;
-    > img {
-      width: 9rem;
-      border-radius: 8px;
-      // animation: 2s floating infinite;
+  > .title {
+    > .image {
+      height: 17rem;
+      > img {
+        width: 9rem;
+        border-radius: 8px;
+        animation: 2s floating infinite;
+      }
     }
+
     > h2 {
       text-transform: uppercase;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 10px;
+      color: ${DEEPMAUVE};
+      font-style: italic;
+    }
+  }
+
+  > .content {
+    margin: 1rem 0 0 1rem;
+
+    > h3 {
+      color: ${DEEPMAUVE};
+    }
+
+    > p {
+      color: black;
     }
   }
 `;
@@ -69,8 +96,10 @@ function Slot({ title, past, present, future }) {
 
   return (
     <SlotStyle>
-      <div className="image">
-        <img src={IMAGE} />
+      <div className="title">
+        <div className="image">
+          <img src={IMAGE} />
+        </div>
         <h2>{title}</h2>
       </div>
       <div className="content">
