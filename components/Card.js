@@ -37,7 +37,7 @@ const Container = styled.div`
     > img {
       width: 10rem;
       border-radius: 11px;
-      animation: 2s floating infinite;
+      animation: 3s floating infinite;
 
       @media (min-width: 800px) {
         width: 15rem;

@@ -27,11 +27,15 @@ const Sorting = styled.div`
   & > a {
     display: grid;
     place-items: center;
-    background: ${DEEPMAUVE};
-    color: ${WHITE};
+    color: ${DEEPMAUVE};
+    text-decoration: underline;
     margin: 0 1rem;
     padding: 0.5rem;
     border-radius: 6px;
+
+    @media (min-width: 600px) {
+      font-size: 1.5rem;
+    }
 
     &:hover,
     :active {
@@ -50,6 +54,7 @@ const CardsContainer = styled.div`
       width: 4rem;
       border-radius: 6px;
       margin: 0.1rem;
+      cursor: pointer;
 
       @media (min-width: 450px) {
         width: 6rem;

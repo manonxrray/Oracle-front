@@ -5,12 +5,20 @@ import { DEEPPINK, DEEPMAUVE } from "../utils/styling";
 const titles = ["passé", "présent", "futur"];
 
 const ReadStyle = styled.div`
-  display: flex;
-  flex-direction: column;
+  padding-top: 2rem;
+  > .slots {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
 
   > a {
-    display: block;
-    margin: 1rem auto;
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
     color: ${DEEPPINK};
     text-decoration: underline;
   }
@@ -31,15 +39,25 @@ const SlotStyle = styled.div`
 
   color: ${DEEPMAUVE};
   display: flex;
-  margin: 1rem;
+  margin: auto;
+
+  @media (min-width: 600px) {
+    flex-direction: column;
+  }
 
   > .title {
+    display: grid;
+    place-items: center;
     > .image {
       height: 17rem;
       > img {
         width: 9rem;
         border-radius: 8px;
         animation: 2s floating infinite;
+
+        @media (min-width: 950px) {
+          width: 12rem;
+        }
       }
     }
 
@@ -49,20 +67,37 @@ const SlotStyle = styled.div`
       text-align: center;
       padding: 0.5rem;
       border-radius: 10px;
-      color: ${DEEPMAUVE};
+      color: ${DEEPPINK};
       font-style: italic;
+
+      @media (min-width: 950px) {
+        margin-top: 4rem;
+      }
     }
   }
 
   > .content {
     margin: 1rem 0 0 1rem;
 
+    @media (min-width: 950px) {
+      margin: auto;
+      text-align: center;
+    }
+
     > h3 {
       color: ${DEEPMAUVE};
+
+      @media (min-width: 600px) {
+        text-align: center;
+      }
     }
 
     > p {
       color: black;
+
+      @media (min-width: 600px) {
+        margin: 1rem;
+      }
     }
   }
 `;
@@ -105,7 +140,14 @@ function Slot({ title, past, present, future }) {
         <h3>
           {NUMBER}. {NAME}
         </h3>
-        <p>{DESCRIPTION}</p>
+        {/* <p>{DESCRIPTION}</p> */}
+        <p>
+          Test de long texte parce que c'est possible qu'elles soient plus
+          longues que ça lolilol. Du coup je teste. L'oracle est un outil de
+          développement personnel qui permet de nous guider dans nos décisions.
+          Ca n'a pas la prétention de lire l'avenir ou quoique ce soit, mais de
+          simplement orienter le consultant vers des conseils qui l'éclairont.
+        </p>
       </div>
     </SlotStyle>
   );
@@ -114,15 +156,17 @@ function Slot({ title, past, present, future }) {
 export default function Reading({ past, present, future }) {
   return (
     <ReadStyle>
-      {titles.map((title, i) => (
-        <Slot
-          key={titles[i]}
-          title={title}
-          past={past}
-          present={present}
-          future={future}
-        />
-      ))}
+      <div className="slots">
+        {titles.map((title, i) => (
+          <Slot
+            key={titles[i]}
+            title={title}
+            past={past}
+            present={present}
+            future={future}
+          />
+        ))}
+      </div>
       <Link href="/">Retour à la page d'accueil</Link>
     </ReadStyle>
   );
