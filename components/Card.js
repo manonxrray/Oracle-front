@@ -20,9 +20,9 @@ const Container = styled.div`
   width: 75vw;
   padding-top: 1rem;
 
-  @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-evenly;
+  @media (min-width: 1200px) {
+    flex-direction: row-reverse;
+    padding-top: 5rem;
   }
 
   > .card {
@@ -30,12 +30,16 @@ const Container = styled.div`
     margin: 0 auto;
     height: 18rem;
 
+    @media (min-width: 1200px) {
+      margin: 5rem auto;
+    }
+
     > img {
       width: 10rem;
       border-radius: 11px;
       animation: 2s floating infinite;
 
-      @media (min-width: 600px) {
+      @media (min-width: 800px) {
         width: 15rem;
         margin: 0;
       }
@@ -48,15 +52,41 @@ const Container = styled.div`
     > h2 {
       margin-bottom: 1rem;
       font-style: italic;
+
+      @media (min-width: 1200px) {
+        font-size: 2rem;
+      }
     }
 
     > p {
       font-size: 0.8rem;
       margin: 0 1rem;
+
+      @media (min-width: 400px) {
+        font-size: 1rem;
+      }
+
+      @media (min-width: 800px) {
+        font-size: 1.2rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 1.5rem;
+        text-align: right;
+      }
     }
 
     @media (min-width: 600px) {
       margin-top: 1.5rem;
+    }
+
+    @media (min-width: 800px) {
+      margin-top: 10rem;
+    }
+
+    @media (min-width: 1200px) {
+      width: 60rem;
+      margin: 5rem 0 0 2rem;
     }
   }
 `;

@@ -9,10 +9,18 @@ const Sorting = styled.div`
     margin: 0.5rem 1rem;
     text-align: center;
 
+    @media (min-width: 500px) {
+      font-size: 1.5rem;
+    }
+
     > strong {
       color: ${DEEPMAUVE};
       text-decoration: underline;
       font-size: 1.3rem;
+
+      @media (min-width: 500px) {
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -42,6 +50,14 @@ const CardsContainer = styled.div`
       width: 4rem;
       border-radius: 6px;
       margin: 0.1rem;
+
+      @media (min-width: 450px) {
+        width: 6rem;
+      }
+
+      @media (min-width: 700px) {
+        width: 8rem;
+      }
     }
   }
 `;
