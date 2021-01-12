@@ -1,11 +1,14 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { DEEPPINK, DEEPMAUVE } from "../utils/styling";
+import { DEEPPINK, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const titles = ["passé", "présent", "futur"];
 
 const ReadStyle = styled.div`
-  padding-top: 2rem;
+  padding-top: 0.5rem;
+
   > .slots {
     display: flex;
     flex-direction: column;
@@ -16,11 +19,16 @@ const ReadStyle = styled.div`
   }
 
   > a {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
     margin-top: 2rem;
     color: ${DEEPPINK};
-    text-decoration: underline;
+
+    > .icon {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -38,12 +46,7 @@ const SlotStyle = styled.div`
   }
 
   color: ${DEEPMAUVE};
-  display: flex;
   margin: auto;
-
-  @media (min-width: 600px) {
-    flex-direction: column;
-  }
 
   > .title {
     display: grid;
@@ -53,7 +56,7 @@ const SlotStyle = styled.div`
       > img {
         width: 9rem;
         border-radius: 8px;
-        animation: 2s floating infinite;
+        animation: 4s floating infinite;
 
         @media (min-width: 950px) {
           width: 12rem;
@@ -67,37 +70,27 @@ const SlotStyle = styled.div`
       text-align: center;
       padding: 0.5rem;
       border-radius: 10px;
-      color: ${DEEPPINK};
+      color: ${LIGHTGREY};
       font-style: italic;
+      margin: -1rem auto auto auto;
 
-      @media (min-width: 950px) {
-        margin-top: 4rem;
+      @media (min-width: 900px) {
+        margin: 4rem auto auto auto;
       }
     }
   }
 
   > .content {
-    margin: 1rem 0 0 1rem;
-
-    @media (min-width: 950px) {
-      margin: auto;
-      text-align: center;
-    }
+    margin: auto;
+    text-align: center;
 
     > h3 {
       color: ${DEEPMAUVE};
-
-      @media (min-width: 600px) {
-        text-align: center;
-      }
     }
 
     > p {
       color: black;
-
-      @media (min-width: 600px) {
-        margin: 1rem;
-      }
+      margin: 1rem;
     }
   }
 `;
@@ -167,7 +160,12 @@ export default function Reading({ past, present, future }) {
           />
         ))}
       </div>
-      <Link href="/">Retour à la page d'accueil</Link>
+      <Link href="/">
+        <a>
+          Retour à la page d'accueil{" "}
+          <FontAwesomeIcon className="icon" icon={faHome} />
+        </a>
+      </Link>
     </ReadStyle>
   );
 }

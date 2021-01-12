@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const PageStyle = styled.div`
-  min-height: 95vh;
+  min-height: 100vh;
   padding-top: 2.5rem;
 
   @media (min-width: 1000px) {

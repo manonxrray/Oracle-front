@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { MAUVE, WHITE } from "../../utils/styling";
-import Link from "next/link";
+import { MAUVE, WHITE, DEEPBLUE } from "../../utils/styling";
+import Active from "./Active";
 
 const FooterStyle = styled.header`
   background: ${MAUVE};
@@ -19,18 +19,23 @@ const FooterStyle = styled.header`
   > span {
     font-weight: bold;
   }
+
+  .selected {
+    text-decoration: 4px solid ${DEEPBLUE} line-through;
+    font-style: italic;
+  }
 `;
 
 export default function Footer() {
   return (
     <FooterStyle>
-      <Link href="/a-propos">
+      <Active href="/a-propos">
         <a>A propos</a>
-      </Link>
+      </Active>
       <span>.</span>
-      <Link href="/contact">
+      <Active href="/contact">
         <a>Contact</a>
-      </Link>
+      </Active>
     </FooterStyle>
   );
 }

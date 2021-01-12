@@ -6,7 +6,6 @@ import { DEEPMAUVE, SOFTBLUE, CANDYPINK } from "../utils/styling";
 
 const HomeStyle = styled.div`
   margin-top: 1rem;
-  padding-bottom: 1rem;
 
   > div {
     > h1 {
@@ -38,6 +37,7 @@ const HomeStyle = styled.div`
     }
 
     > .options {
+      margin-top: 2rem;
       display: flex;
       justify-content: space-evenly;
 

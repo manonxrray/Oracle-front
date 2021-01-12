@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
-import { DEEPMAUVE, WHITE } from "../utils/styling";
+import { CANDYPINK, DEEPMAUVE, SOFTBLUE, WHITE } from "../utils/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Sorting = styled.div`
   padding-bottom: 1rem;
+
   > p {
     margin: 0.5rem 1rem;
+    font-size: 0.9rem;
     text-align: center;
 
     @media (min-width: 500px) {
@@ -25,15 +29,19 @@ const Sorting = styled.div`
   }
 
   & > a {
-    display: grid;
-    place-items: center;
-    color: ${DEEPMAUVE};
-    text-decoration: underline;
-    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
     padding: 0.5rem;
     border-radius: 6px;
+    font-size: 0.9rem;
 
-    @media (min-width: 600px) {
+    > .icon {
+      color: ${DEEPMAUVE};
+      font-size: 1.5rem;
+      margin-left: 1rem;
+    }
+
+    > @media (min-width: 600px) {
       font-size: 1.5rem;
     }
 
@@ -45,15 +53,20 @@ const Sorting = styled.div`
 `;
 
 const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
   > div {
     > img {
       width: 4rem;
       border-radius: 6px;
-      margin: 0.1rem;
+
       cursor: pointer;
 
       @media (min-width: 450px) {
@@ -100,9 +113,7 @@ export default function Sort({ cards }) {
   return (
     <Sorting>
       <p>
-        Les cartes ont été mélangées, vous pouvez en choisir <strong>3</strong>{" "}
-        puis cliquer sur le bouton qui apparaîtra pour lire l'interprétation.
-        Bon tirage !
+        Vous pouvez choisir <strong>3</strong> cartes ...
       </p>
       <CardsContainer>
         {shuffledCards.map((card) => (
@@ -119,7 +130,10 @@ export default function Sort({ cards }) {
         <Link
           href={`/tirage/resultat/${selectedCards[0].slug}-${selectedCards[1].slug}-${selectedCards[2].slug}`}
         >
-          <a>Lire l'interprétation de votre tirage</a>
+          <a>
+            ... et lire l'interprétation de votre tirage
+            <FontAwesomeIcon className="icon" icon={faPlay} />
+          </a>
         </Link>
       )}
     </Sorting>

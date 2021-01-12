@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import { WHITE } from "../../utils/styling";
+import { WHITE, MAUVE, DEEPBLUE } from "../../utils/styling";
+import Active from "./Active";
+import GalleryActive from "./GalleryActive";
 import Link from "next/link";
 
 const HeaderStyle = styled.header`
@@ -8,38 +10,47 @@ const HeaderStyle = styled.header`
   height: 2.5rem;
   display: flex;
   justify-content: space-between;
-  background: ${WHITE};
+  background: ${MAUVE};
+  color: ${WHITE};
 
-  @media (min-width: 1000px) {
-    height: 3.5rem;
+  .selected {
+    text-decoration: 4px solid ${DEEPBLUE} line-through;
+    font-style: italic;
   }
 
+  @media (min-width: 900px) {
+  }
   > .logo {
     width: 2.2rem;
     height: 2.2rem;
     background-size: cover;
     margin: 0 0.5rem;
+
+    @media (min-width: 900px) {
+      width: 3rem;
+      height: 3rem;
+      margin: -0.2rem 1rem;
+    }
   }
 
   > nav {
-    font-style: italic;
     margin: 0.5rem;
 
     > a {
       margin: 0.5rem;
+
+      &:hover,
+      :active {
+        font-style: italic;
+      }
 
       @media (min-width: 600px) {
         font-size: 1.2rem;
       }
 
       @media (min-width: 1000px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
-    }
-
-    > .active {
-      font-weight: bold;
-      font-size: 1.3rem;
     }
   }
 `;
@@ -47,17 +58,19 @@ const HeaderStyle = styled.header`
 export default function Header() {
   return (
     <HeaderStyle>
-      <img className="logo" src="/logo.PNG" />
+      <Link href="/">
+        <img className="logo" src="/logo.PNG" />
+      </Link>
       <nav>
-        <Link href="/">
+        <Active href="/">
           <a>Accueil</a>
-        </Link>
-        <Link href="/tirage">
+        </Active>
+        <Active href="/tirage">
           <a>Tirage</a>
-        </Link>
-        <Link href="/galerie/reve">
+        </Active>
+        <GalleryActive href="/galerie/reve">
           <a>Galerie</a>
-        </Link>
+        </GalleryActive>
       </nav>
     </HeaderStyle>
   );
