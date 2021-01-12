@@ -1,8 +1,14 @@
-import styled from "@emotion/styled";
+import { useState } from "react";
 import Link from "next/link";
-import { DEEPPINK, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
+
+import styled from "@emotion/styled";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+
+import Help from "./Help";
+import { ReadHelp } from "./Help";
+import { DEEPPINK, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
 
 const titles = ["passé", "présent", "futur"];
 
@@ -10,11 +16,15 @@ const ReadStyle = styled.div`
   padding-top: 0.5rem;
 
   > .slots {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(9);
 
-    @media (min-width: 600px) {
-      flex-direction: row;
+    @media (min-width: 800px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      height: 100vh;
     }
   }
 
@@ -44,9 +54,6 @@ const SlotStyle = styled.div`
       padding-top: 1rem;
     }
   }
-
-  color: ${DEEPMAUVE};
-  margin: auto;
 
   > .title {
     display: grid;
@@ -80,15 +87,17 @@ const SlotStyle = styled.div`
     }
   }
 
-  > .content {
+  > .name {
     margin: auto;
     text-align: center;
-
     > h3 {
       color: ${DEEPMAUVE};
     }
+  }
 
+  > .description {
     > p {
+      text-align: center;
       color: black;
       margin: 1rem;
     }
@@ -129,26 +138,30 @@ function Slot({ title, past, present, future }) {
         </div>
         <h2>{title}</h2>
       </div>
-      <div className="content">
+      <div className="name">
         <h3>
           {NUMBER}. {NAME}
         </h3>
-        {/* <p>{DESCRIPTION}</p> */}
-        <p>
-          Test de long texte parce que c'est possible qu'elles soient plus
-          longues que ça lolilol. Du coup je teste. L'oracle est un outil de
-          développement personnel qui permet de nous guider dans nos décisions.
-          Ca n'a pas la prétention de lire l'avenir ou quoique ce soit, mais de
-          simplement orienter le consultant vers des conseils qui l'éclairont.
-        </p>
+      </div>
+      <div className="description">
+        <p>{DESCRIPTION}</p>
       </div>
     </SlotStyle>
   );
 }
 
 export default function Reading({ past, present, future }) {
+  const [helpModal, setHelpModal] = useState(false);
+
+  function openModal() {
+    setHelpModal(!helpModal);
+    return;
+  }
+
   return (
     <ReadStyle>
+      <Help onClick={openModal} />
+      {helpModal === true && <ReadHelp closeModal={openModal} />}
       <div className="slots">
         {titles.map((title, i) => (
           <Slot
