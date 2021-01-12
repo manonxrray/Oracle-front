@@ -33,7 +33,7 @@ const HeaderStyle = styled.header`
       }
 
       @media (min-width: 1000px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
     }
 

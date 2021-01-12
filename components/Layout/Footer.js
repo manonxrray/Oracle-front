@@ -10,6 +10,12 @@ const FooterStyle = styled.header`
   justify-content: space-evenly;
   padding: 0.5rem;
 
+  @media (min-width: 600px) {
+    padding: 1rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+  }
+
   > span {
     font-weight: bold;
   }

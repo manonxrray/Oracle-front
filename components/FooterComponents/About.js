@@ -51,6 +51,19 @@ const AboutContainer = styled.div`
       @media (min-width: 1000px) {
         font-size: 1.3rem;
       }
+
+      > em {
+        font-style: italic;
+        font-size: 0.8rem;
+
+        @media (min-width: 1000px) {
+          font-size: 1rem;
+        }
+      }
+
+      > strong {
+        color: ${DEEPMAUVE};
+      }
     }
 
     > h4 {
@@ -70,7 +83,7 @@ export default function About() {
   return (
     <AboutContainer>
       <div className="image">
-        <h1>A propos de L'Oracle des Yeux</h1>
+        <h1>A propos</h1>
         <img src="/manon.PNG" />
       </div>
       <div className="about">
@@ -84,7 +97,7 @@ export default function About() {
         <p>
           Le but de cet Oracle est de vous proposer des pistes de réponse et
           d'évolution à vos questions. Ceci n'est que la première version du
-          site, j'aimerais par la suite vous offrir{" "}
+          site, j'aimerais <strong>par la suite</strong> vous offrir{" "}
           <strong>plus de personnalisation</strong> et surtout une{" "}
           <strong>possibilité d'enregistrer vos résultats de tirage</strong>{" "}
           afin de consulter les conseils que vous auriez pu recevoir grâce à

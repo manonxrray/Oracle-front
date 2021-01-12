@@ -105,28 +105,28 @@ const SlotStyle = styled.div`
 function Slot({ title, past, present, future }) {
   const IMAGE =
     title === "passé"
-      ? past.picture
+      ? past?.picture
       : title === "présent"
-      ? present.picture
-      : future.picture;
+      ? present?.picture
+      : future?.picture;
   const NAME =
     title === "passé"
-      ? past.name
+      ? past?.name
       : title === "présent"
-      ? present.name
-      : future.name;
+      ? present?.name
+      : future?.name;
   const NUMBER =
     title === "passé"
-      ? past.number
+      ? past?.number
       : title === "présent"
-      ? present.number
-      : future.number;
+      ? present?.number
+      : future?.number;
   const DESCRIPTION =
     title === "passé"
-      ? past.past
+      ? past?.past
       : title === "présent"
-      ? present.present
-      : future.future;
+      ? present?.present
+      : future?.future;
 
   return (
     <SlotStyle>

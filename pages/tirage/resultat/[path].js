@@ -36,6 +36,7 @@ export async function getStaticProps({ params }) {
       presentCard: card2[0],
       futureCard: card3[0],
     },
+    revalidate: 1,
   };
 }
 
