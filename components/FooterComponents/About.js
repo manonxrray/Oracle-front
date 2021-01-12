@@ -8,6 +8,8 @@ const AboutContainer = styled.div`
 
   @media (min-width: 800px) {
     flex-direction: row;
+    padding: 0rem;
+    margin-top: 3rem;
   }
 
   > .image {
@@ -17,11 +19,7 @@ const AboutContainer = styled.div`
     > h1 {
       font-size: 1.5rem;
       text-align: center;
-
-      @media (min-width: 800px) {
-        text-align: left;
-        margin-bottom: 1rem;
-      }
+      margin-bottom: 1rem;
 
       @media (min-width: 1000px) {
         font-size: 2rem;
@@ -40,6 +38,9 @@ const AboutContainer = styled.div`
   }
 
   > .about {
+    @media (min-width: 800px) {
+      margin-top: 2rem;
+    }
     > p {
       margin: 1rem;
       display: block;

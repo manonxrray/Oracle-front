@@ -1,7 +1,102 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { DEEPBLUE, CANDYPINK, DEEPMAUVE } from "../../utils/styling";
 
-const ContactContainer = styled.div``;
+const ContactContainer = styled.div`
+  @media (min-width: 800px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 1rem;
+  }
+
+  > img {
+    width: 10rem;
+    margin: auto;
+    display: block;
+  }
+
+  > h1 {
+    text-align: center;
+    font-style: italic;
+  }
+
+  > .contacts {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 6rem;
+      text-align: center;
+    }
+
+    h3 {
+      color: ${DEEPBLUE};
+    }
+
+    h4 {
+      color: ${DEEPMAUVE};
+    }
+
+    > .retours {
+      margin: 1rem 0 1rem 1rem;
+
+      @media (min-width: 800px) {
+        width: 40%;
+      }
+
+      > .please {
+        font-size: 0.9rem;
+        font-style: italic;
+        margin: 0.5rem 0;
+      }
+    }
+
+    > .pro {
+      margin: 1rem 1rem 1rem 0;
+      @media (min-width: 800px) {
+        width: 40%;
+      }
+
+      > .infos {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0;
+
+        a {
+          text-decoration: 3px solid ${CANDYPINK} underline;
+
+          &:hover,
+          :active {
+            font-style: italic;
+          }
+        }
+        strong {
+          color: ${CANDYPINK};
+        }
+      }
+
+      .plus {
+        margin: 0.5rem 0;
+      }
+
+      > * {
+        text-align: right;
+
+        @media (min-width: 800px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+`;
 
 export default function Contact() {
   return (
@@ -25,25 +120,32 @@ export default function Contact() {
           <h3>Envie de discuter professionnellement ?</h3>
           <p className="explain">
             Vous êtes développeur ou futur développeur et souhaitez discuter ?
-            Ou vous êtes peut-être un recruteur ou CTO à la recherche de son
-            prochain talent et mon profil vous intéresse ? Voici mes différents
-            réseaux et contacts.
+            Ou peut-être êtes-vous à la recherche de votre prochain talent et
+            mon profil vous intéresse ? Voici mes différents réseaux et
+            contacts.
           </p>
           <div className="infos">
             <Link href="https://www.linkedin.com/in/manongerray/">
-              <a>Ma page Linkedin</a>
+              <a>
+                Ma page Linkedin <strong>*</strong>
+              </a>
             </Link>
             <Link href="https://www.github.com/manonxrray">
-              <a>Ma page Github</a>
+              <a>
+                Ma page Github <strong>*</strong>
+              </a>
             </Link>
             <Link href="https://twitter.com/mnoudev">
-              <a>Mon compte Twitter</a>
+              <a>
+                Mon compte Twitter <strong>*</strong>
+              </a>
             </Link>
             <p className="plus">et par mail à l'adresse suivante :</p>
             <h4>manon.gerray@gmail.com</h4>
           </div>
         </div>
       </div>
+      <img src="/cards.PNG" />
     </ContactContainer>
   );
 }
