@@ -11,19 +11,14 @@ export const CardsNav = styled.div`
   background: ${MAUVE};
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(12);
   margin-top: -1rem;
 
   > div {
-    padding: 1rem;
     display: grid;
     place-items: center;
     background: ${MAUVE};
     color: ${WHITE};
-
-    @media (min-width: 900px) {
-      padding: 0.5rem;
-    }
 
     > a {
       margin: 0.5rem 0;

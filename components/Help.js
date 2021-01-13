@@ -117,7 +117,8 @@ export function ReadHelp({ closeModal }) {
       <p>
         La <strong>seconde</strong> carte est placée sur la position du{" "}
         <strong>présent</strong>, elle évoque alors quelque chose que vous vivez
-        actuellement ou un caractère que vous avez particulièrement en ce moment{" "}
+        actuellement ou un caractère que vous avez particulièrement en ce
+        moment.
       </p>
       <p>
         Enfin, la <strong>troisième</strong> carte évoque votre{" "}
@@ -129,7 +130,7 @@ export function ReadHelp({ closeModal }) {
       </p>
       <h5>
         Bonne lecture ! Vous pouvez me contacter sur Twitter si vous avez besoin
-        d'aider pour interpréter vos cartes.
+        d'aide pour interpréter vos cartes.
       </h5>
     </ReadContainer>
   );

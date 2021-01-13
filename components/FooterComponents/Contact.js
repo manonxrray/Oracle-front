@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DEEPBLUE, CANDYPINK, DEEPMAUVE } from "../../utils/styling";
 
 const ContactContainer = styled.div`
+  padding-top: 1rem;
   @media (min-width: 800px) {
     font-size: 1.5rem;
   }

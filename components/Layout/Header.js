@@ -20,7 +20,8 @@ const HeaderStyle = styled.header`
 
   @media (min-width: 900px) {
   }
-  > .logo {
+
+  .logo {
     width: 2.2rem;
     height: 2.2rem;
     background-size: cover;
@@ -59,7 +60,9 @@ export default function Header() {
   return (
     <HeaderStyle>
       <Link href="/">
-        <img className="logo" src="/logo.PNG" />
+        <a>
+          <img className="logo" src="/logo.PNG" />
+        </a>
       </Link>
       <nav>
         <Active href="/">

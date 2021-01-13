@@ -49,6 +49,10 @@ const Container = styled.div`
   > .content {
     margin: 0.5rem auto;
 
+    @media (min-width: 1000px) {
+      padding-top: 3rem;
+    }
+
     > h2 {
       margin-bottom: 1rem;
       font-style: italic;
@@ -71,7 +75,6 @@ const Container = styled.div`
       }
 
       @media (min-width: 1200px) {
-        font-size: 1.5rem;
         text-align: right;
       }
     }
