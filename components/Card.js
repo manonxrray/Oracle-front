@@ -14,82 +14,73 @@ const Container = styled.div`
     }
   }
 
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 75vw;
-  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  overflow: scroll;
+  place-items: center;
 
-  @media (min-width: 1200px) {
-    flex-direction: row-reverse;
-    padding-top: 5rem;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 
-  > .card {
-    width: 100%;
-    margin: 0 auto;
+  .card {
     height: 18rem;
+    margin-top: 1rem;
+    > img {
+      width: 8rem;
+      animation: 3s floating infinite;
+    }
+    @media (min-width: 800px) {
+      margin: 0;
 
-    @media (min-width: 1200px) {
-      margin: 5rem auto;
+      > img {
+        width: 12rem;
+        @media (min-width: 1000px) {
+          width: 15rem;
+        }
+      }
     }
 
-    > img {
-      width: 10rem;
-      border-radius: 11px;
-      animation: 3s floating infinite;
+    @media (min-width: 1000px) {
+      margin-top: -5rem;
 
-      @media (min-width: 800px) {
+      > img {
         width: 15rem;
-        margin: 0;
       }
     }
   }
 
-  > .content {
-    margin: 0.5rem auto;
-
-    @media (min-width: 1000px) {
-      padding-top: 3rem;
-    }
+  .content {
+    display: grid;
+    place-items: center;
 
     > h2 {
-      margin-bottom: 1rem;
-      font-style: italic;
+      font-size: 1rem;
+      text-decoration: 3px solid ${MAUVE} underline;
 
-      @media (min-width: 1200px) {
-        font-size: 2rem;
+      @media (min-width: 600px) {
+        font-size: 1.5rem;
       }
     }
 
     > p {
+      margin: 1rem;
+      text-align: center;
       font-size: 0.8rem;
-      margin: 0 1rem;
 
-      @media (min-width: 400px) {
-        font-size: 1rem;
+      @media (min-width: 600px) {
+        text-align: right;
       }
 
       @media (min-width: 800px) {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
-      @media (min-width: 1200px) {
-        text-align: right;
+      @media (min-width: 1000px) {
+        padding-right: 4rem;
       }
-    }
-
-    @media (min-width: 600px) {
-      margin-top: 1.5rem;
-    }
-
-    @media (min-width: 800px) {
-      margin-top: 10rem;
-    }
-
-    @media (min-width: 1200px) {
-      width: 60rem;
-      margin: 5rem 0 0 2rem;
     }
   }
 `;
@@ -104,14 +95,7 @@ export default function Card({ name, description, picture, number }) {
         <h2>
           {number}. {name}
         </h2>
-        {/* <p>{description}</p> */}
-        <p>
-          petit test avec une plus grande description parce que quand même faut
-          pas abuser quoi ça va être plus long que ça le texte affiché et OUI je
-          choisis de ne pas faire de Lorem Ipsum et de me débrouiller avec mon
-          phrasé bien nul et chiant ! QUEL EST LE PROBLEME ?? ?HEIN ??? QUEL EST
-          LE PROBLEME MES AIEUX ??
-        </p>
+        <p>{description}</p>
       </div>
     </Container>
   );

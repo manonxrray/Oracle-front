@@ -62,9 +62,7 @@ export default function AllCards({ cards, card, page }) {
           <div key={card.idnb} className={page === card.slug ? "active" : ""}>
             <Link href={`/galerie/${card.slug}`}>
               <a>
-                <h2>
-                  {card.number}. {card.name}
-                </h2>
+                <h2>{card.name}</h2>
               </a>
             </Link>
           </div>

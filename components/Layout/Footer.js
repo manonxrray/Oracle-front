@@ -3,9 +3,9 @@ import { MAUVE, WHITE, DEEPBLUE } from "../../utils/styling";
 import Active from "./Active";
 
 const FooterStyle = styled.header`
-  background: ${MAUVE};
+  background: ${WHITE};
   height: 2.5rem;
-  color: ${WHITE};
+  border-top: 1px solid ${MAUVE};
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;

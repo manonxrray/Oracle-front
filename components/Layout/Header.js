@@ -10,8 +10,8 @@ const HeaderStyle = styled.header`
   height: 2.5rem;
   display: flex;
   justify-content: space-between;
-  background: ${MAUVE};
-  color: ${WHITE};
+  background: ${WHITE};
+  border-bottom: 1px solid ${MAUVE};
 
   .selected {
     text-decoration: 4px solid ${DEEPBLUE} line-through;
@@ -31,6 +31,23 @@ const HeaderStyle = styled.header`
       width: 3rem;
       height: 3rem;
       margin: -0.2rem 1rem;
+    }
+  }
+
+  .title {
+    display: flex;
+
+    > h5 {
+      display: none;
+
+      @media (min-width: 600px) {
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+      }
+      @media (min-width: 800px) {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -60,8 +77,9 @@ export default function Header() {
   return (
     <HeaderStyle>
       <Link href="/">
-        <a>
+        <a className="title">
           <img className="logo" src="/logo.PNG" />
+          <h5>L'Oracle des Yeux</h5>
         </a>
       </Link>
       <nav>
