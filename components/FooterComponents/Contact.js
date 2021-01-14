@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { DEEPBLUE, CANDYPINK, DEEPMAUVE } from "../../utils/styling";
+import { DEEPBLUE, CANDYPINK, DEEPMAUVE, MAUVE } from "../../utils/styling";
 
 const ContactContainer = styled.div`
   padding-top: 1rem;
@@ -21,6 +21,8 @@ const ContactContainer = styled.div`
   > h1 {
     text-align: center;
     font-style: italic;
+    font-size: 1.5rem;
+    text-decoration: 5px solid ${MAUVE} underline;
   }
 
   > .contacts {
@@ -31,7 +33,7 @@ const ContactContainer = styled.div`
       margin-top: 3rem;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1100px) {
       flex-direction: row;
       justify-content: space-evenly;
       margin-top: 6rem;
@@ -49,10 +51,6 @@ const ContactContainer = styled.div`
     > .retours {
       margin: 1rem 0 1rem 1rem;
 
-      @media (min-width: 800px) {
-        width: 40%;
-      }
-
       > .please {
         font-size: 0.9rem;
         font-style: italic;
@@ -62,9 +60,6 @@ const ContactContainer = styled.div`
 
     > .pro {
       margin: 1rem 1rem 1rem 0;
-      @media (min-width: 800px) {
-        width: 40%;
-      }
 
       > .infos {
         display: flex;
@@ -91,7 +86,7 @@ const ContactContainer = styled.div`
       > * {
         text-align: right;
 
-        @media (min-width: 800px) {
+        @media (min-width: 1100px) {
           text-align: center;
         }
       }
@@ -102,7 +97,7 @@ const ContactContainer = styled.div`
 export default function Contact() {
   return (
     <ContactContainer>
-      <h1>Contactez-moi !</h1>
+      <h1>Contactez-moi</h1>
       <div className="contacts">
         <div className="retours">
           <h3>J'attends vos retours sur le site</h3>

@@ -17,9 +17,9 @@ const OpenHelp = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: ${WHITE};
+  background: ${DEEPBLUE};
   border: 3px solid ${SOFTBLUE};
-  color: ${SOFTBLUE};
+  color: ${WHITE};
   cursor: pointer;
 `;
 
@@ -28,6 +28,16 @@ export default function Help({ onClick }) {
 }
 
 export const ReadContainer = styled.div`
+  @keyframes appear {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: 1s appear linear;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -70,7 +80,6 @@ export const ReadContainer = styled.div`
   }
 
   > h2 {
-    margin-top: 0.5rem;
     font-size: 1rem;
     color: ${DEEPBLUE};
 
@@ -81,7 +90,6 @@ export const ReadContainer = styled.div`
 
   > p {
     font-size: 0.8rem;
-    margin-bottom: 0.2rem;
 
     @media (min-width: 450px) {
       font-size: 1rem;
@@ -96,6 +104,10 @@ export const ReadContainer = styled.div`
 
   > h5 {
     text-align: center;
+  }
+
+  > h6 {
+    color: ${DEEPMAUVE};
   }
 `;
 
@@ -132,6 +144,7 @@ export function ReadHelp({ closeModal }) {
         Bonne lecture ! Vous pouvez me contacter sur Twitter si vous avez besoin
         d'aide pour interpréter vos cartes.
       </h5>
+      <h6>@mnoudev</h6>
     </ReadContainer>
   );
 }

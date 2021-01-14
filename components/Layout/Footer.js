@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { MAUVE, WHITE, DEEPBLUE } from "../../utils/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Active from "./Active";
 
 const FooterStyle = styled.header`
@@ -10,6 +12,10 @@ const FooterStyle = styled.header`
   justify-content: space-evenly;
   padding: 0.5rem;
 
+  .icon {
+    color: ${DEEPBLUE};
+  }
+
   @media (min-width: 600px) {
     padding: 1rem;
     height: 3.5rem;
@@ -18,6 +24,13 @@ const FooterStyle = styled.header`
 
   > span {
     font-weight: bold;
+  }
+
+  a {
+    &:hover,
+    :active {
+      font-style: italic;
+    }
   }
 
   .selected {
@@ -32,7 +45,7 @@ export default function Footer() {
       <Active href="/a-propos">
         <a>A propos</a>
       </Active>
-      <span>.</span>
+      <FontAwesomeIcon className="icon" icon={faEye} />
       <Active href="/contact">
         <a>Contact</a>
       </Active>

@@ -8,7 +8,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 import Help from "./Help";
 import { ReadHelp } from "./Help";
-import { DEEPPINK, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
+import { MAUVE, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
 
 const titles = ["passé", "présent", "futur"];
 
@@ -32,12 +32,19 @@ const ReadStyle = styled.div`
     display: flex;
     justify-content: center;
     padding: 1rem;
-    margin-top: 3rem;
-    color: ${DEEPPINK};
+    margin-top: 5rem;
+
+    text-decoration: 3px solid ${MAUVE} underline;
+
+    &:hover,
+    :active {
+      font-style: italic;
+    }
 
     > .icon {
       margin-left: 1rem;
       font-size: 1.5rem;
+      color: ${MAUVE};
     }
   }
 `;

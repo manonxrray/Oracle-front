@@ -14,7 +14,7 @@ const HeaderStyle = styled.header`
   border-bottom: 1px solid ${MAUVE};
 
   .selected {
-    text-decoration: 4px solid ${DEEPBLUE} line-through;
+    text-decoration: 4px solid ${MAUVE} line-through;
     font-style: italic;
   }
 

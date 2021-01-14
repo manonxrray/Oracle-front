@@ -6,8 +6,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Sorting = styled.div`
-  padding-bottom: 1rem;
-
   > p {
     margin: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -54,14 +52,21 @@ const Sorting = styled.div`
 
 const CardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   place-items: center;
+  margin: auto;
+  width: 90vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 0.5fr);
+
+  @media (min-width: 600px) {
+    width: 70vw;
+  }
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
+
   > div {
     > img {
       width: 4rem;
