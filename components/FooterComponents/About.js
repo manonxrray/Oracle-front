@@ -69,12 +69,14 @@ const AboutContainer = styled.div`
 
     > h4 {
       text-align: right;
-      margin: 0 1rem 0 0;
-      font-style: italic;
-      color: ${DEEPMAUVE};
+      margin-right: 2rem;
 
-      @media (min-width: 1000px) {
-        font-size: 1.5rem;
+      img {
+        width: 8rem;
+
+        @media (min-width: 600px) {
+          width: 10rem;
+        }
       }
     }
   }
@@ -109,7 +111,9 @@ export default function About() {
           maison, et espère secrètement qu'il vous apportera au moins le dixième
           de ce que vous étiez venus chercher en lançant un tirage sur mon site.
         </p>
-        <h4>Manon</h4>
+        <h4>
+          <img src="/signature.PNG" href="Ma signature" />
+        </h4>
       </div>
     </AboutContainer>
   );

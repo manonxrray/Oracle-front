@@ -6,9 +6,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Sorting = styled.div`
+  .cards {
+    width: 10rem;
+    display: block;
+    margin: 4rem auto;
+  }
+
   > p {
     margin: 0.5rem 1rem;
-    font-size: 0.9rem;
     text-align: center;
 
     @media (min-width: 500px) {
@@ -141,6 +146,7 @@ export default function Sort({ cards }) {
           </a>
         </Link>
       )}
+      <img className="cards" src="/cards.PNG" href="Cartes" />
     </Sorting>
   );
 }
