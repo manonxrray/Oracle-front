@@ -104,7 +104,7 @@ export default function HomePage() {
             <strong>outil de développement personnel</strong> et non un outil de
             divination. Le consulter peut vous permettre d'y voir plus clair,
             d'obtenir des pistes de réponse à vos questions, ou tout simplement
-            de vous amuser à lire les histoires qui se crééent au travers des
+            de vous amuser à lire les histoires qui se créent au travers des
             cartes tirées.
           </p>
         </div>
