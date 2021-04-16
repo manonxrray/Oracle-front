@@ -4,6 +4,30 @@ import Active from "./Active";
 import GalleryActive from "./GalleryActive";
 import Link from "next/link";
 
+export default function Header() {
+  return (
+    <HeaderStyle>
+      <Link href="/">
+        <a className="title">
+          <img className="logo" src="/logo.PNG" />
+          <h5>L'Oracle des Yeux</h5>
+        </a>
+      </Link>
+      <nav>
+        <Active href="/">
+          <a>Accueil</a>
+        </Active>
+        <Active href="/tirage">
+          <a>Tirage</a>
+        </Active>
+        <GalleryActive href="/galerie/reve">
+          <a>Galerie</a>
+        </GalleryActive>
+      </nav>
+    </HeaderStyle>
+  );
+}
+
 const HeaderStyle = styled.header`
   position: fixed;
   width: 100vw;
@@ -72,27 +96,3 @@ const HeaderStyle = styled.header`
     }
   }
 `;
-
-export default function Header() {
-  return (
-    <HeaderStyle>
-      <Link href="/">
-        <a className="title">
-          <img className="logo" src="/logo.PNG" />
-          <h5>L'Oracle des Yeux</h5>
-        </a>
-      </Link>
-      <nav>
-        <Active href="/">
-          <a>Accueil</a>
-        </Active>
-        <Active href="/tirage">
-          <a>Tirage</a>
-        </Active>
-        <GalleryActive href="/galerie/reve">
-          <a>Galerie</a>
-        </GalleryActive>
-      </nav>
-    </HeaderStyle>
-  );
-}

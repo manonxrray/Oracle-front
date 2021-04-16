@@ -47,10 +47,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function AllCards({ cards, card, page }) {
-  // I created the Serenity card when I already created all the cards, so the id was
-  // not OK and the card appeared in last position though it should appear in fifth.
-  // I created the idnb field in my database so now I can sort in a good order !
-
   let cardsById = cards.sort(function (a, b) {
     return a.idnb - b.idnb;
   });

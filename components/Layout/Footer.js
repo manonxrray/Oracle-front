@@ -4,6 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Active from "./Active";
 
+export default function Footer() {
+  return (
+    <FooterStyle>
+      <Active href="/a-propos">
+        <a>A propos</a>
+      </Active>
+      <FontAwesomeIcon className="icon" icon={faEye} />
+      <Active href="/contact">
+        <a>Contact</a>
+      </Active>
+    </FooterStyle>
+  );
+}
+
 const FooterStyle = styled.header`
   background: ${WHITE};
   height: 2.5rem;
@@ -38,17 +52,3 @@ const FooterStyle = styled.header`
     font-style: italic;
   }
 `;
-
-export default function Footer() {
-  return (
-    <FooterStyle>
-      <Active href="/a-propos">
-        <a>A propos</a>
-      </Active>
-      <FontAwesomeIcon className="icon" icon={faEye} />
-      <Active href="/contact">
-        <a>Contact</a>
-      </Active>
-    </FooterStyle>
-  );
-}

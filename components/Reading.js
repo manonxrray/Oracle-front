@@ -12,6 +12,85 @@ import { MAUVE, DEEPMAUVE, LIGHTGREY } from "../utils/styling";
 
 const titles = ["passé", "présent", "futur"];
 
+function Slot({ title, past, present, future }) {
+  const IMAGE =
+    title === "passé"
+      ? past?.picture
+      : title === "présent"
+      ? present?.picture
+      : future?.picture;
+  const NAME =
+    title === "passé"
+      ? past?.name
+      : title === "présent"
+      ? present?.name
+      : future?.name;
+  const NUMBER =
+    title === "passé"
+      ? past?.number
+      : title === "présent"
+      ? present?.number
+      : future?.number;
+  const DESCRIPTION =
+    title === "passé"
+      ? past?.past
+      : title === "présent"
+      ? present?.present
+      : future?.future;
+
+  return (
+    <SlotStyle>
+      <div className="title">
+        <div className="image">
+          <img src={IMAGE} />
+        </div>
+        <h2>{title}</h2>
+      </div>
+      <div className="name">
+        <h3>
+          {NUMBER}. {NAME}
+        </h3>
+      </div>
+      <div className="description">
+        <p>{DESCRIPTION}</p>
+      </div>
+    </SlotStyle>
+  );
+}
+
+export default function Reading({ past, present, future }) {
+  const [helpModal, setHelpModal] = useState(false);
+
+  function openModal() {
+    setHelpModal(!helpModal);
+    return;
+  }
+
+  return (
+    <ReadStyle>
+      <Help onClick={openModal} />
+      {helpModal === true && <ReadHelp closeModal={openModal} />}
+      <div className="slots">
+        {titles.map((title, i) => (
+          <Slot
+            key={titles[i]}
+            title={title}
+            past={past}
+            present={present}
+            future={future}
+          />
+        ))}
+      </div>
+      <Link href="/">
+        <a>
+          Retour à la page d'accueil{" "}
+          <FontAwesomeIcon className="icon" icon={faHome} />
+        </a>
+      </Link>
+    </ReadStyle>
+  );
+}
+
 const ReadStyle = styled.div`
   padding-top: 0.5rem;
 
@@ -110,82 +189,3 @@ const SlotStyle = styled.div`
     }
   }
 `;
-
-function Slot({ title, past, present, future }) {
-  const IMAGE =
-    title === "passé"
-      ? past?.picture
-      : title === "présent"
-      ? present?.picture
-      : future?.picture;
-  const NAME =
-    title === "passé"
-      ? past?.name
-      : title === "présent"
-      ? present?.name
-      : future?.name;
-  const NUMBER =
-    title === "passé"
-      ? past?.number
-      : title === "présent"
-      ? present?.number
-      : future?.number;
-  const DESCRIPTION =
-    title === "passé"
-      ? past?.past
-      : title === "présent"
-      ? present?.present
-      : future?.future;
-
-  return (
-    <SlotStyle>
-      <div className="title">
-        <div className="image">
-          <img src={IMAGE} />
-        </div>
-        <h2>{title}</h2>
-      </div>
-      <div className="name">
-        <h3>
-          {NUMBER}. {NAME}
-        </h3>
-      </div>
-      <div className="description">
-        <p>{DESCRIPTION}</p>
-      </div>
-    </SlotStyle>
-  );
-}
-
-export default function Reading({ past, present, future }) {
-  const [helpModal, setHelpModal] = useState(false);
-
-  function openModal() {
-    setHelpModal(!helpModal);
-    return;
-  }
-
-  return (
-    <ReadStyle>
-      <Help onClick={openModal} />
-      {helpModal === true && <ReadHelp closeModal={openModal} />}
-      <div className="slots">
-        {titles.map((title, i) => (
-          <Slot
-            key={titles[i]}
-            title={title}
-            past={past}
-            present={present}
-            future={future}
-          />
-        ))}
-      </div>
-      <Link href="/">
-        <a>
-          Retour à la page d'accueil{" "}
-          <FontAwesomeIcon className="icon" icon={faHome} />
-        </a>
-      </Link>
-    </ReadStyle>
-  );
-}
